@@ -1,0 +1,331 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Visibility from '~/components/widgets/Visibility.astro';
+import ChooseUs from '~/components/widgets/ChooseUs.astro';
+import Benefits from '~/components/widgets/Benefits.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Payment from '~/components/widgets/Payment.astro';
+
+const metadata = {
+  title: 'Pitchfy',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    image={{ src: '~/assets/images/brush.png', alt: '' }}
+  >
+    <Fragment slot="title">
+      Pitchfy
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Transform your stories into captivating articles and easily connect with journalists in just a few clicks. Share your content, increase your visibility and reach the right audience quickly and effectively.
+    </Fragment>
+  </Hero>
+
+  <!-- Visibility *************** -->
+
+  <Visibility
+    id="Visibility"
+    tagline="AI-Driven Visibility"
+    title="Amplify Your Storytelling with AI"
+    subtitle="Our AI-powered platform helps you craft stories that catch the attention of major news outlets. Increase your chances of being featured in prestigious publications."
+  />
+
+  <!-- How Works -->
+
+  <Content
+    tagline="How It Works!"
+    title="Discover the simple steps that bring your ideas to life"
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'Start the journey easily',
+        description: `Click the chatbot button in the bottom right corner to get started. Our user-friendly interface will guide you through the process.`,
+      },
+      {
+        title: 'Intuitive interview process',
+        description: `Answer a series of tailored questions designed to understand your story or insights. Whether personal, professional, or promotional, we’ll help shape your narrative.`,
+      },
+      {
+        title: 'Personalized interaction',
+        description: `Share your experiences and ideas effectively, with each question crafted to help communicate your message clearly.`,
+      },
+      {
+        title: 'Efficient and engaging',
+        description: `Our simple process ensures that you can focus on what matters: sharing your story in the most impactful way possible.`,
+      },
+    ]}
+    image={{
+      src: '~/assets/images/hw1.png',
+      alt: 'Astronauts Image',
+    }}
+  >
+  <Fragment slot="content">
+    <h3 class="mb-2 text-xl font-bold tracking-tight dark:text-white ">Answer Questions</h3>
+    <p class="text-sm">Click the chatbot button in the bottom right corner and share your story through our guided interview process.</p>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent mt-[-2rem]"></div>
+  </Fragment>
+</Content>
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Transform your story with AI',
+        description: `Once you’ve shared your story, our advanced AI technology refines your responses using cutting-edge natural language processing.`,
+      },
+      {
+        title: 'SEO optimization',
+        description: `The AI ensures your content is clear, engaging, and optimized for search engines, enhancing visibility and discoverability.`,
+      },
+      {
+        title: 'Professional article crafting',
+        description: `Our AI generates polished, compelling articles that effectively communicate your message to your audience.`,
+      },
+      {
+        title: 'Stand out online',
+        description: `With SEO-enhanced content, your article is designed to perform better in search results, helping you stand out in the digital world.`,
+      },
+    ]}
+    image={{
+      src: '~/assets/images/hw2.png',
+      alt: 'Astronauts Image',
+    }}
+  >
+  <Fragment slot="content">
+    <h3 class="mb-2 text-xl font-bold tracking-tight dark:text-white ">AI Magic</h3>
+    <p class="text-sm">Our AI crafts compelling, SEO-optimized stories that capture attention and transform your answers into professional articles.</p>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent mt-[-2rem]"></div>
+  </Fragment>
+</Content>
+
+<Content
+  isReversed
+  isAfterContent
+  items={[
+    {
+      title: 'Connect with the right journalists',
+      description: `Once your story is polished, we match you with journalists who are relevant to your industry or niche.`,
+    },
+    {
+      title: 'Increase media visibility',
+      description: `Whether you want to be featured in top outlets or collaborate on in-depth interviews, our platform helps you reach the right media professionals.`,
+    },
+    {
+      title: 'Leverage a powerful network',
+      description: `Tap into our extensive network of industry journalists to gain visibility and credibility..`,
+    },
+    {
+      title: 'Boost credibility and awareness',
+      description: `Our connections help raise awareness about your work, boosting your credibility in the media and giving your story the attention it deserves.`,
+    },
+  ]}
+  image={{
+    src: '~/assets/images/hw5.png',
+    alt: 'Astronauts Image',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="mb-2 text-xl font-bold tracking-tight dark:text-white ">Reach Journalists</h3>
+    <p class="text-sm">Connect with relevant journalists in your industry.</p>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent mt-[-2rem]"></div>
+  </Fragment>
+</Content>
+
+
+
+  <!-- Benefits ****************** -->
+
+  <Benefits
+    title="Benefits of Being Published"
+    items={[
+      {
+        title: '1: <span class="font-medium">Gain Authority</span>',
+        description:
+          "Establish yourself as a thought leader in your industry and build credibility with your audience.",
+        icon: 'tabler:star',
+      },
+      {
+        title: '2: <span class="font-medium">Attract Investors</span>',
+        description:
+          "Increase visibility among potential investors and showcase your business potential.",
+        icon: 'tabler:rocket',
+      },
+      {
+        title: '3: <span class="font-medium">Visa Support</span>',
+        description:
+          'Strengthen your visa applications with published articles demonstrating your expertise.',
+        icon: 'tabler:e-passport',
+      },
+      {
+        title: '4: <span class="font-medium">Reach Customers</span>',
+        description:
+          "Expand your customer base and increase brand awareness through media exposure.",
+        icon: 'tabler:speakerphone',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/Benefits.png',
+      alt: 'Steps image',
+    }}
+  />
+
+  <!-- Why choose us ************** -->
+
+  <ChooseUs
+    title="Why Choose Us"
+    subtitle="The Smart Way to Share Your Story and Gain Recognition"
+    tagline="Share your story"
+    items={[
+      {
+        title: 'PR for Everyone',
+        icon: 'tabler:star',
+        color: 'bg-secondary',
+        points: [
+          'Empowering individuals and businesses to share their stories with the world',
+          'No need for a large budget to get media coverage',
+          'Accessible platform for users at any experience level'
+        ]
+      },
+      {
+        title: 'Journalist Outreach',
+        icon: 'tabler:heart-handshake',
+        color: 'bg-tertiary',
+        points: [
+          'Connect directly with journalists in your niche',
+          'Simplified outreach process that helps you get noticed',
+          'Expand your media network with just a few clicks'
+        ]
+      },
+      {
+        title: 'Time & Cost Effective',
+        icon: 'tabler:coin',
+        color: 'bg-quaternary',
+        points: [
+          'Save hours of effort compared to traditional PR methods',
+          'Avoid costly PR agency fees and do it yourself',
+          'Get high-quality results in less time and at a fraction of the cost'
+        ]
+      }
+    ]}
+    
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </ChooseUs>
+
+
+  <!-- Whats Users Say -->
+
+  <Testimonials
+    classes={{ container: 'md:px-0' }}
+    title="What Our Users Are Saying"
+    information={`Discover how our platform has helped individuals and businesses alike enhance their visibility, connect with journalists, and elevate their PR efforts, all while saving time and money.
+  `}
+/>
+
+
+
+  <!-- Payment -->
+
+  <Payment
+    title="Find the Perfect Plan for You"
+    subtitle="Choose from our options designed to fit your needs, whether you're just starting out or looking to maximize your business impact."
+    tagline="Princing Plan"
+    items={[
+      {
+        plan: 'started',
+        title: 'Started Plan',
+        value: '88.99',
+        icon: 'tabler:check',
+        time: 'Month',
+        description: 'From Basic use',
+        points: [
+          '1 AI-generated article',
+          'Basic journalist outreach',
+          'Email support',
+          'SEO-friendly formatting'
+        ]
+      }
+    ]}
+    
+  >
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Payment>
+
+
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
+    tagline="Questions"
+    classes={{ container: 'max-w-6xl' }}
+    image={{ src: '~/assets/images/qa.png', alt: '' }}
+    bgimage={{ src: '~/assets/images/qa2.png', alt: '' }}
+    items={[
+      {
+        title: 'What kind of articles can it write?',
+        description:
+          "Our AI can generate various types of PR content including press releases, company announcements, product launches, and thought leadership pieces."
+      },
+      {
+        title: 'How do you send my article to journalists?',
+        description:
+          "We maintain a curated database of journalists and match your content with those covering relevant topics in your industry."
+      },
+      {
+        title: 'How long does the process take?',
+        description:
+          "The interview process takes about 15 minutes, and your AI-generated article will be ready in seconds. Journalist outreach begins within 24 hours."
+      },
+      {
+        title: 'Can the AI create personalized content for different industries?',
+        description:
+          "Yes, our AI is capable of tailoring content to various industries, from tech to healthcare, ensuring it resonates with the target audience."
+      },
+      {
+        title: 'How do you handle revisions or content adjustments?',
+        description:
+          "Our platform allows you to make revisions to the generated content easily. You can update specific sections or request new drafts until it aligns with your needs."
+      }
+    ]}
+    
+  />
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Stories Published', amount: '5.3K' },
+      { title: 'Journalists Connected', amount: '2.1K' },
+      { title: 'Visibility Reached', amount: '15k' }, 
+      { title: 'Active Users', amount: '12K' },
+    ]}
+  />
+
+</Layout>

@@ -1,0 +1,42 @@
+---
+// import Image from '~/components/common/Image.astro';
+import Layout from '~/layouts/Layout.astro';
+import PaymentForm from '~/components/payment/Payment.tsx';
+
+const metadata = {
+  title: 'Contact',
+};
+
+
+export function getStaticPaths() {
+  return [
+    {params: {plan: 'started'}}
+  ];
+}
+
+const {plan} = Astro.params ;
+const items=[
+  {
+    id: 'price_1QZKr4BXKBZiMZ3LPGf71TGX',
+    plan: 'started',
+    title: 'Started Plan',
+    value: '88.99',
+    icon: 'tabler:check',
+    time: 'Month',
+    description: 'From Basic use',
+    points: [
+      '1 AI-generated article',
+      'Basic journalist outreach',
+      'Email support',
+      'SEO-friendly formatting'
+    ]
+  }
+]
+
+const item = items.find(item => item.plan === plan)
+
+---
+
+<Layout metadata={metadata}>
+  <PaymentForm client:only="react" item={item} />
+</Layout>

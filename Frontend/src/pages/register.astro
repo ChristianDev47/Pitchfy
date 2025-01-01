@@ -1,0 +1,12 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import FormRegister from '~/components/user/Register.tsx';
+
+const metadata = {
+  title: 'Contact',
+};
+---
+
+<Layout metadata={metadata}>
+    <FormRegister client:only="react"/>
+</Layout>

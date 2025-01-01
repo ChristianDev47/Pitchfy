@@ -1,0 +1,14 @@
+---
+// import Image from '~/components/common/Image.astro';
+import Layout from '~/layouts/Layout.astro';
+import FormLogin from '~/components/user/Login.tsx';
+
+const metadata = {
+  title: 'Contact',
+};
+// const image = [{src:'~/assets/images/login.png'}]
+---
+
+<Layout metadata={metadata}>
+    <FormLogin client:only="react"/>
+</Layout>
