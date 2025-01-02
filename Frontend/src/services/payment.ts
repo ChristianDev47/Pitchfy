@@ -1,6 +1,6 @@
 import type { PaymentCard } from "~/types";
 
-const API = "http://localhost:3000/payment";
+const API = " https://pitchfy.onrender.com/payment";
 
 export async function CreatePaymentCard({ paymentCard }: { paymentCard: PaymentCard }) {
 

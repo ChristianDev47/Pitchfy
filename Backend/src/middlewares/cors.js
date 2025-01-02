@@ -2,7 +2,9 @@ import cors from "cors";
 
 const ACCEPTED_ORIGINS = [
   "http://localhost:3000",
+  "https://pitchfy.onrender.com",
   "http://localhost:4321",
+  "https://pitchfy.vercel.app",
   "https://www.pitchfy.co"
 ];
 

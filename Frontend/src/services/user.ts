@@ -1,6 +1,6 @@
 import type { LoginType } from "~/types";
 
-const API = 'http://localhost:3000';
+const API = ' https://pitchfy.onrender.com';
 
 export async function LoginWithGoogle() {
   try {

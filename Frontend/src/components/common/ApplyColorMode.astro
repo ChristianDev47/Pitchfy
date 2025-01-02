@@ -26,8 +26,8 @@ import { UI } from 'astrowind:config';
     localStorage.theme === 'dark' ||
     (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
   ) {
-    applyTheme('dark');
-  } else {
     applyTheme('light');
+  } else {
+    applyTheme('dark');
   }
 </script>

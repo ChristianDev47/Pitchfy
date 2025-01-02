@@ -40,7 +40,7 @@ export default function FormLogin() {
 
   // Función para manejar la autenticación con Google
   const googleAuth = async () => {
-    window.location.href = 'http://localhost:3000/auth/google';
+    window.location.href = 'https://pitchfy.onrender.com/auth/google';
   };
 
   // Función para manejar el inicio de sesión con correo electrónico
@@ -186,7 +186,7 @@ export default function FormLogin() {
 						Sign up
 					</button>
 				</div>
-				<img  src='../../src/assets/images/login.png' className="image" alt="" />
+				<img  src='/login.png' className="mt-8 image" alt="" />
 			</div>
 			<div className="panel right-panel">
 				<div className="content">
@@ -199,7 +199,7 @@ export default function FormLogin() {
 						Sign in
 					</button>
 				</div>
-				<img src='../../src/assets/images/register.png'  className="image" alt="" />
+				<img src='/register.png'  className="image" alt="" />
 			</div>
 		</div>
     </div>
