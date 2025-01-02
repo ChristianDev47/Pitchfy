@@ -49,7 +49,6 @@ export const initializeUser = () => {
     const userData: User = jwtDecode(token); 
     const response = async () => {
       const user = await GetUser(userData._id)
-      console.log(user);
       setUser(user)
     }
     response()
