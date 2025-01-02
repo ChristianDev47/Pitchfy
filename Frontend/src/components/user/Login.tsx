@@ -80,13 +80,13 @@ export default function FormLogin() {
   };
 
   return (
-    <div className={`container ${mode}`}>
+    <div className={`container ${mode} `}>
       <div className="forms-container">
         <div className="signin-signup">
          <div className={`sign-in-form ${sifMode} flex justify-center items-center h-screen`}> 
-          <div className="flex flex-col items-center justify-center flex-1 w-full mt-6 text-center ">
+          <div className="flex flex-col items-center justify-center flex-1 w-full mt-6 text-center wdt-heading-title-wrapper wdt-heading-align-center wdt-heading-deco-wrapper motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
             <h1 className='mb-5 text-[1.5rem] font-semibold text-gray-800'>Hello Again 👋</h1>
-            <div className="flex flex-col items-center w-full">
+            <div className="flex flex-col items-center w-full ">
               <button
                 onClick={googleAuth}
                 className="flex items-center justify-center w-full max-w-xs py-2 text-sm font-bold text-gray-800 transition-all duration-300 ease-in-out bg-indigo-100 rounded-lg shadow-sm focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline"
@@ -175,7 +175,7 @@ export default function FormLogin() {
         </div>
       </div>
       <div className="panels-container">
-			<div className="panel left-panel">
+			<div className="panel left-panel wdt-heading-title-wrapper wdt-heading-align-center wdt-heading-deco-wrapper motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
 				<div className="content">
 					<h3>New here ?</h3>
 					<p>

@@ -22,11 +22,11 @@
 
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center rounded-xl border-gray-400  bg-transparent font-medium text-center text-[15px] text-page leading-snug transition py-3.5 px-4 md:px-4 ease-in duration-200 focus:ring-blue-500 focus:ring-offset-blue-200 focus:ring-2 focus:ring-offset-2 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer;
+    @apply inline-flex items-center justify-center rounded-xl border-gray-400  bg-transparent font-medium text-center text-[15px] text-page leading-snug transition py-3.5 px-4 md:px-4 ease-in duration-200 outline-none focus:ring-offset-blue-200 focus:ring-2 focus:ring-offset-2 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer;
   }
 
   .btn-primary {
-    @apply btn font-semibold hover:bg-primary text-white bg-secondary  hover:text-white dark:text-white dark:bg-primary dark:border-primary  dark:hover:bg-secondary;
+    @apply btn font-semibold hover:bg-primary text-white bg-secondary  hover:text-white dark:text-white dark:bg-primary dark:border-primary  dark:hover:bg-secondary outline-none ;
   }
 
   .btn-secondary {
