@@ -63,9 +63,6 @@ export default function FormLogin() {
             secondary: "#000",
           },
         });
-        setTimeout(() => {
-          window.location.href = 'https://pitchfy.zapier.app/';
-        }, 2000);
       }
     } catch (error) {
       console.error("Error al iniciar sesión:", error);

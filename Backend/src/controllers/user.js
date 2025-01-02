@@ -49,7 +49,6 @@ class UserController {
         sameSite: 'lax',
         secure: false, 
       });
-      console.log(user, token);
       return res.status(200).json({user, token});
   
     } catch (error) {

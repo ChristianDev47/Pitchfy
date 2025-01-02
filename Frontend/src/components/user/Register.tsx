@@ -57,7 +57,6 @@ export default function FormRegister() {
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     try {
       const {user, token} = await CreateAcount({ user: data });
-      console.log(user, token);
 
       if (user === undefined) {
         toast.error(`Email o contraseña incorrectos..`, {
@@ -77,7 +76,7 @@ export default function FormRegister() {
         });
         setTimeout(() => {
           window.location.href = `/log?token=${token}`
-        }, 2000);
+        }, 500);
       }
     } catch (error) {
       setCreateError('Email already used')
