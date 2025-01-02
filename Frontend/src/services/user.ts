@@ -32,7 +32,10 @@ export async function LoginWithEmail({ login }: { login: LoginType }) {
       credentials: 'include',
       body: JSON.stringify(login),
     });
-    if (!response.ok) {
+    if (response.ok) {
+      const data = await response.json();
+      return data
+    }else{
       toast.error(
         "Login failed: Please check your email and password and try again.",
         {

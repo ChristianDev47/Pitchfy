@@ -28,7 +28,8 @@ class LoginController {
       secure: false, 
     });
 
-    res.redirect(`${process.env.FRONTEND_URL}/log?token=${token}`);
+    res.status(404).json({ token });
+
   };
 }
 
