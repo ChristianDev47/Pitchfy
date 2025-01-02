@@ -1,7 +1,6 @@
 import generateToken from "../services/generateJWT.js";
 import { User } from '../models/schema/User.js';
 import { hashPassword } from '../services/encryptPassword.js';
-import generateToken from '../services/generateJWT.js';
 
 class UserController {
 
