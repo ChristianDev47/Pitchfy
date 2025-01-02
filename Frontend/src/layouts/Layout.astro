@@ -42,7 +42,7 @@ import UserInitializer from '~/components/user/UserInitializer';
 
   <body class="antialiased tracking-tight text-default bg-page">
     <slot />
-    <UserInitializer client:only="react" />
+    <UserInitializer client:visible />
     <BasicScripts />
   </body>
 </html>
