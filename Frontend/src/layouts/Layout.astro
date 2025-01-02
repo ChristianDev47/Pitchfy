@@ -23,6 +23,7 @@ export interface Props {
 const { metadata = {} } = Astro.props;
 const { language, textDirection } = I18N;
 import UserInitializer from '~/components/user/UserInitializer';
+import { Toaster } from 'react-hot-toast';
 --- 
 
 <!doctype html>
@@ -44,5 +45,6 @@ import UserInitializer from '~/components/user/UserInitializer';
     <slot />
     <UserInitializer client:only="react" />
     <BasicScripts />
+    <Toaster position="bottom-right" client:visible />
   </body>
 </html>

@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import type { LoginType } from "~/types";
 
 const API = ' https://pitchfy.onrender.com';
@@ -31,9 +32,17 @@ export async function LoginWithEmail({ login }: { login: LoginType }) {
       credentials: 'include',
       body: JSON.stringify(login),
     });
-    if (response.ok) {
-      const data = await response.json();
-      return data;
+    if (!response.ok) {
+      toast.error(
+        "Login failed: Please check your email and password and try again.",
+        {
+          duration: 5000,
+          style: {
+            fontSize: '15px',
+            padding: '8px',
+          },
+        }
+      );
     }
   } catch (error) {
     console.error('Fetching Error:', error);
@@ -85,7 +94,19 @@ export async function CreateAcount({ user }) {
     if (response.ok) {
       const data = await response.json();
       return data;
+    }else{
+      toast.error(
+        "The email address you entered is already associated with an account. Please use a different one.",
+        {
+          duration: 5000,
+          style: {
+            fontSize: '15px',
+            padding: '8px',
+          },
+        }
+      );
     }
+    
   } catch (error) {
     console.error("Fetching Error:", error);
     throw new Error("Failed to fetch revenue data.");

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
-import toast from 'react-hot-toast';
 import { LoginWithEmail } from '~/services/user';
 import  '~/assets/styles/auth.css';
 import FormRegister from './Register';
@@ -46,33 +45,9 @@ export default function FormLogin() {
   // Función para manejar el inicio de sesión con correo electrónico
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     try {
-      const user = await LoginWithEmail({ login: data });
-      if (user === undefined) {
-        toast.error(`Email o contraseña incorrectos..`, {
-          duration: 5000,
-        });
-      } else {
-        toast.success(`Sesión iniciada. Bienvenido/a ${user.email}.`, {
-          duration: 2000,
-          style: {
-            background: "#7DA640",
-            color: "#fff",
-          },
-          iconTheme: {
-            primary: "#fff",
-            secondary: "#000",
-          },
-        });
-      }
+      await LoginWithEmail({ login: data });
     } catch (error) {
       console.error("Error al iniciar sesión:", error);
-      toast.error(
-        "Error al iniciar sesión. Por favor, inténtalo de nuevo más tarde.",
-        {
-          duration: 5000,
-        }
-      );
-      window.location.href = '/';
     }
   };
 
@@ -118,8 +93,8 @@ export default function FormLogin() {
               </div>
             </div>
 
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="max-w-xs mx-auto">
+            <form className="flex flex-col items-center w-full " onSubmit={handleSubmit(onSubmit)}>
+              <div  className="flex flex-col justify-center w-full max-w-xs text-start">
                 <input
                   {...register('email', {
                     required: 'El correo electrónico es obligatorio',
@@ -134,7 +109,7 @@ export default function FormLogin() {
                   placeholder="Email"
                 />
                 {errors.email && (
-                  <p className="text-sm text-[#ff2d2d]">{errors.email.message}</p>
+                  <p className="text-[14px] ml-2 text-start text-[#ff2d2d]">{errors.email.message}</p>
                 )}
 
                 <input
@@ -146,17 +121,17 @@ export default function FormLogin() {
                     },
                     onChange: handleInputPassword,
                   })}
-                  className="w-full px-4 py-2 text-[15px] my-5 placeholder-gray-500 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-400 focus:bg-white"
+                  className="w-full px-4 py-2 text-[15px] mt-3 placeholder-gray-500 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-400 focus:bg-white"
                   type="password"
                   placeholder="Password"
                 />
                 {errors.password && (
-                  <p className="text-sm text-[#ff2d2d]">{errors.password.message}</p>
+                  <p className="text-[14px] ml-2 text-start text-[#ff2d2d]">{errors.password.message}</p>
                 )}
 
                 <button
                   disabled={inputEmailValue === '' || inputPasswordValue === ''}
-                  className="w-full py-2 rounded-md btn-primary"
+                  className="w-full py-2 mt-3 rounded-md btn-primary"
                 >
                   <span className="text-[15px]">Login </span>
                 </button>
