@@ -29,7 +29,7 @@ class LoginController {
       secure: false, 
     });
 
-    res.status(404).json({ token: token });
+    res.status(200).json({ token });
 
   };
 }
