@@ -11,6 +11,7 @@ const LogPage = () => {
     const token = params.get('token');
     
     if (token) {
+      Cookies.remove('authToken');
       Cookies.set('authToken', token);
       const userData: User = jwtDecode(token); 
       setUser(userData)
