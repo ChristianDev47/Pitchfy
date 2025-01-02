@@ -45,10 +45,10 @@ export default function FormLogin() {
   // Función para manejar el inicio de sesión con correo electrónico
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     try {
-      const {token} = await LoginWithEmail({ login: data });
-      window.location.href = `/log?token=${token}`;
+      const info = await LoginWithEmail({ login: data });
+      window.location.href = `/log?token=${info.token}`;
     } catch (error) {
-      console.error("Error al iniciar sesión:", error);
+      console.error("Error:", error);
     }
   };
 

@@ -1,4 +1,4 @@
-import { comparePasswords } from "../services/authService.js";
+import { comparePasswords } from '../services/encryptPassword.js';
 import generateToken from "../services/generateJWT.js";
 import { User } from "../models/schema/User.js";
 
@@ -8,13 +8,14 @@ class LoginController {
     const { email, password } = req.body;
 
     const user = await User.findOne({ email }).exec();
-
+    
     let passwordCorrect = false;
     if (user != null) {
       passwordCorrect = await comparePasswords(password, user.password);
     }
     
-    if (!(user && passwordCorrect)) {
+    console.log(user, email, password, passwordCorrect);
+    if (!user && !passwordCorrect) {
       return res.status(401).json({
         error: "Invalid email or password",
       });
@@ -28,7 +29,7 @@ class LoginController {
       secure: false, 
     });
 
-    res.status(404).json({ token });
+    res.status(404).json({ token: token });
 
   };
 }
