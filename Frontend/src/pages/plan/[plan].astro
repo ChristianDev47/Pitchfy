@@ -38,5 +38,5 @@ const item = items.find(item => item.plan === plan)
 ---
 
 <Layout metadata={metadata}>
-  <PaymentForm client:visible item={item} />
+  <PaymentForm client:only="react" item={item} />
 </Layout>
