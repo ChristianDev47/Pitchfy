@@ -133,7 +133,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       ]}
     >
       <div class="flex items-center justify-start w-full md:justify-between md:w-auto">
-        <ButtonComponent client:only="react"/>
+        <ButtonComponent client:visible />
         <UserBotton client:visible />
       </div>
     </div>
