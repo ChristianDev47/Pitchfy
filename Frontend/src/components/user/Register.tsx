@@ -63,10 +63,6 @@ export default function FormRegister() {
       }
     } catch (error) {
       console.error("Error :", error);
-      setTimeout(() => {
-        window.location.href = '/';
-      }, 8888000);
-
     }
   };
 
