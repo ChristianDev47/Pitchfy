@@ -10,7 +10,7 @@ const metadata = {
 
 export function getStaticPaths() {
   return [
-    {params: {plan: 'started'}}
+    {params: {plan: 'starter'}}
   ];
 }
 
@@ -18,8 +18,8 @@ const {plan} = Astro.params ;
 const items=[
   {
     id: 'price_1Qcxx5BXKBZiMZ3La5HCRslC',
-    plan: 'started',
-    title: 'Started Plan',
+    plan: 'starter',
+    title: 'Starter Plan',
     value: '89.00',
     icon: 'tabler:check',
     time: 'Month',
