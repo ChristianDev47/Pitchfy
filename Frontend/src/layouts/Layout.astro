@@ -45,6 +45,6 @@ import { Toaster } from 'react-hot-toast';
     <slot />
     <UserInitializer client:only="react" />
     <BasicScripts />
-    <Toaster position="bottom-right" client:visible />
+    <Toaster position="bottom-right" client:only="react" />
   </body>
 </html>
