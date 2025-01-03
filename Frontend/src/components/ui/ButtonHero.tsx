@@ -3,7 +3,6 @@ import { userStore  } from '../../stores/store';
 
 function ButtonReact() {
   const user = useStore(userStore);
-  console.log(user);
 
   return (
     <a

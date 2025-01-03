@@ -22,7 +22,7 @@ export default {
       },
 
       animation: {
-        fade: 'fadeInUp 2s both',
+        fade: 'fadeInUp 1s both',
         heroFade: 'fadeInUp 2s both',
         headerFade: 'headerFadeIn 2s 1s both',
       },
