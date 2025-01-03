@@ -25,14 +25,14 @@ const {
         {
           tagline && (
             <p
-              class="text-base font-bold tracking-wide uppercase text-secondary dark:text-blue-200 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+              class="text-base font-bold tracking-wide uppercase text-secondary dark:text-blue-200 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-heroFade"
               set:html={tagline}
             />
           )
         }
         {
           title && (
-            <h2 class="wdt-heading-title-wrapper wdt-heading-align-center wdt-heading-deco-wrapper motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+            <h2 class="wdt-heading-title-wrapper wdt-heading-align-center wdt-heading-deco-wrapper motion-safe:md:opacity-0 motion-safe:md:intersect:animate-heroFade">
               <div class="flex wdt-heading-title">
                 <StyleTitle class="wdt-shin size-10 text-primary"/>
                 <span class="text-6xl font-bold" set:html={title}/>
@@ -45,19 +45,19 @@ const {
           {
             subtitle && (
               <p
-                class="mb-6 text-[18px] mx-auto text-black font-normal  text-muted dark:text-slate-300 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+                class="mb-6 text-[18px] mx-auto text-black font-normal  text-muted dark:text-slate-300 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-heroFade"
                 set:html={subtitle}
               />
             )
           }
-         <div class="flex flex-col max-w-xs duration-500 ease-in-out sm:max-w-md flex-nowrap sm:flex-row intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+         <div class="flex flex-col max-w-xs duration-500 ease-in-out sm:max-w-md flex-nowrap sm:flex-row intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-heroFade">
           <ButtonHero client:only="react"/>
         </div>
         
         </div>
         {content && <Fragment set:html={content} />}
       </div>
-      <div class="relative z-20 flex flex-col items-center justify-center space-y-6 sm:space-x-10 sm:flex-row sm:space-y-0 motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+      <div class="relative z-20 flex flex-col items-center justify-center space-y-6 sm:space-x-10 sm:flex-row sm:space-y-0 motion-safe:md:opacity-0 motion-safe:md:intersect:animate-heroFade">
         <div class="flex flex-col p-5 bg-gray-50 shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(135,43,151,0.15)] rounded-lg text-start max-w-[350px] space-y-2">
           <div class="flex items-center space-x-1">
             <div class="relative flex items-center justify-center w-10 h-6 bg-tertiary rounded-xl">
