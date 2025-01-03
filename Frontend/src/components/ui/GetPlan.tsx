@@ -1,14 +1,8 @@
 import { useStore } from '@nanostores/react';
-import { userStore , initializeUser  } from '../../stores/store';
-import { useEffect } from 'react';
+import { userStore  } from '../../stores/store';
 
 function ButtonReact() {
   const user = useStore(userStore);
-
-  console.log(user);
-  useEffect(() => {
-    initializeUser()
-  }, [])
 
   return (
     <a
