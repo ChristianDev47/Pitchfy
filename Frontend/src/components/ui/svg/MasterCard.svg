@@ -1,14 +1,14 @@
 <svg
   viewBox="0 -140 780 780"
-  enable-background="new 0 0 780 500"
+  enableBackground="new 0 0 780 500"
   version="1.1"
   xml:space="preserve"
   xmlns="http://www.w3.org/2000/svg"
   fill="#000000"
-  ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+  ><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g
     id="SVGRepo_tracerCarrier"
-    stroke-linecap="round"
-    stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"
+    strokeLinecap="round"
+    strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"
     ><rect width="780" height="500" fill="#16366F"></rect><path
       d="m449.01 250c0 99.143-80.37 179.5-179.51 179.5s-179.5-80.361-179.5-179.5c0-99.133 80.362-179.5 179.5-179.5 99.137 0 179.51 80.37 179.51 179.5"
       fill="#D9222A"></path><path

@@ -3,6 +3,16 @@ import type { LoginType } from "~/types";
 
 const API = ' https://pitchfy.onrender.com';
 
+
+interface User {
+  displayName: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+}
+
+
 export async function LoginWithGoogle() {
   try {
     const response = await fetch(`${API}/login`, {
@@ -85,7 +95,7 @@ export async function GetUser(id :string ) {
 
 
 
-export async function CreateAcount({ user }) {
+export async function CreateAcount({ user }: {user: User}) {
   try {
     const response = await fetch(`${API}/user`, {
       method: "POST",

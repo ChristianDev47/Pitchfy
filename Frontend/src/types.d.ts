@@ -174,7 +174,7 @@ export interface User {
   password: string;
   createdAt: string;
   plan: string;
-  planExpition: string;
+  planExpiration: string;
   planId?: string;
 }
 

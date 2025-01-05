@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { UpdatePlan } from "~/services/payment";
+import { UpdatePlan } from "../../services/payment";
 
 const Process = (sesionId: string) => {
   
@@ -13,7 +13,7 @@ const Process = (sesionId: string) => {
       }
     }
     redirect()
-  }, []);
+  }, [sesionId]);
 
   return ''
 };

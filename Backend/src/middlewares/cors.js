@@ -5,7 +5,8 @@ const ACCEPTED_ORIGINS = [
   "https://pitchfy.onrender.com",
   "http://localhost:4321",
   "https://pitchfy.vercel.app",
-  "https://www.pitchfy.co"
+  "https://www.pitchfy.co",
+  "http://localhost:5173"
 ];
 
 export const corsMiddlewares = ({ acceptedOrigins = ACCEPTED_ORIGINS } = {}) =>

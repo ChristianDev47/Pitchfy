@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
-import { CreateAcount } from '~/services/user';
+import { CreateAcount } from '../../services/user';
+import { useAuth } from '../../hooks/useAuth';
 
 // Validations types
 type Inputs = {
@@ -23,6 +24,8 @@ export default function FormRegister() {
       password: '',
     },
   });
+
+  const {login} = useAuth()
 
   const [inputUserNameValue, setInputUserNameValue] = useState<string>('');
   const [inputFirstNameValue, setInputFirstNameValue] = useState<string>('');
@@ -51,22 +54,20 @@ export default function FormRegister() {
   };
 
 
-  // Función para manejar el inicio de sesión con correo electrónico
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     try {
       const {user, token} = await CreateAcount({ user: data });
 
       if (user !== undefined)  {
         setTimeout(() => {
-          window.location.href = `/log?token=${token}`
+          login(token)
+          window.location.href = `/`
         }, 500);
       }
     } catch (error) {
       console.error("Error :", error);
     }
   };
-
-  
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
-import { LoginWithEmail } from '~/services/user';
-import  '~/assets/styles/auth.css';
+import { LoginWithEmail } from '../../services/user';
+import  '../../assets/styles/auth.css';
 import FormRegister from './Register';
+import { useAuth } from '../../hooks/useAuth';
 
 // Validations types
 type Inputs = {
@@ -23,6 +24,7 @@ export default function FormLogin() {
     },
   });
 
+  const {login} = useAuth()
   const [inputEmailValue, setInputEmailValue] = useState<string>('');
   const [inputPasswordValue, setInputPasswordValue] = useState<string>('');
   const [mode, setMode] = useState<string>('');
@@ -37,16 +39,17 @@ export default function FormLogin() {
     setInputPasswordValue(event.target.value);
   };
 
-  // Función para manejar la autenticación con Google
   const googleAuth = async () => {
     window.location.href = 'https://pitchfy.onrender.com/auth/google';
   };
 
-  // Función para manejar el inicio de sesión con correo electrónico
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     try {
       const info = await LoginWithEmail({ login: data });
-      window.location.href = `/log?token=${info.token}`;
+      if(info.token) {
+        login(info.token)
+        window.location.href = `/`;
+      }
     } catch (error) {
       console.error("Error:", error);
     }
@@ -159,7 +162,7 @@ export default function FormLogin() {
 						Sign up
 					</button>
 				</div>
-				<img  src='/login.png' className="mt-8 image" alt="" />
+				<img  src='/images/login.png' className=" image" alt="" />
 			</div>
 			<div className="panel right-panel">
 				<div className="content">
@@ -172,7 +175,7 @@ export default function FormLogin() {
 						Sign in
 					</button>
 				</div>
-				<img src='/register.png'  className="image" alt="" />
+				<img src='/images/register.png'  className="mt-12 image" alt="" />
 			</div>
 		</div>
     </div>

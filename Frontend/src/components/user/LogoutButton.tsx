@@ -1,17 +1,17 @@
-import Cookies from 'js-cookie';
-import { InitalData, setUser } from '~/stores/store';
+import { useAuth } from "../../hooks/useAuth";
 
 const LogoutButton = () => {
+  const {logout} = useAuth()
+  
   const handleLogout = () => {
     setTimeout(() => {
-      Cookies.remove('authToken'); 
-      setUser(InitalData)
+      logout()
       window.location.href = '/';
     }, 500)
   }
 
   return (
-    <button className="block text-[12px] text-start w-full px-5 py-2 whitespace-no-wrap dark:hover:bg-gray-700 dark:hover:text-white first:rounded-t hover:text-link last:rounded-b md:hover:bg-gray-100" onClick={handleLogout}>
+    <button className="block text-[12px] text-start w-full px-5 py-2 whitespace-no-wrap first:rounded-t hover:text-link last:rounded-b md:hover:bg-gray-100" onClick={handleLogout}>
       Logout
     </button> 
   )
