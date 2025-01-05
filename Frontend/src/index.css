@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: "inter";
+  src: url("/fonts/Inter.ttf") format("truetype");
+}
+
+html {
+  font-family: 'Inter', Courier, monospace;
+}
+
+@layer utilities {
+  .bg-page {
+    background-color: var(--aw-color-bg-page);
+  }
+  .bg-light {
+    background-color: var(--aw-color-bg-page);
+  }
+  .text-page {
+    color: var(--aw-color-text-page);
+  }
+  .text-muted {
+    color: var(--aw-color-text-muted);
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-xl border-gray-400  bg-transparent font-medium text-center text-[15px] text-page leading-snug transition py-3.5 px-4 md:px-4 ease-in duration-200 outline-none focus:ring-offset-blue-200 focus:ring-2 focus:ring-offset-2 hover:bg-gray-100 hover:border-gray-600  cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply btn font-semibold hover:bg-primary text-white bg-secondary  hover:text-white  outline-none ;
+  }
+
+  .btn-secondary {
+    @apply w-full font-semibold bg-primary text-white hover:bg-secondary hover:border-secondary hover:text-white  rounded-2xl;
+  }
+
+  .btn-tertiary {
+    @apply btn border-none shadow-none text-muted hover:text-gray-900 ;
+  }
+}
+
+:root {
+  --aw-font-sans: 'Inter Variable';
+  --aw-font-serif: 'Inter Variable';
+  --aw-font-heading: 'Inter Variable';
+
+  --aw-color-primary: #171720;
+  --aw-color-secondary: #FF7130;
+  --aw-color-tertiary: #FF3C68;
+  --aw-color-quaternary: #872B97;
+
+  --aw-color-accent: rgb(109 40 217);
+
+  --aw-color-text-heading: rgb(0 0 0);
+  --aw-color-text-default: rgb(16 16 16);
+  --aw-color-text-muted: rgb(16 16 16 / 66%);
+  --aw-color-bg-page: rgb(255 255 255);
+
+}
+
+
+#header.scroll > div:first-child {
+  @apply bg-page md:bg-white/90 md:backdrop-blur-md;
+  box-shadow: 0 0.375rem 1.5rem 0 rgb(140 152 164 / 13%);
+}
+.dark #header.scroll > div:first-child,
+#header.scroll.dark > div:first-child {
+  @apply bg-page md:bg-[#030621e6] border-b border-gray-500/20;
+  box-shadow: none;
+}
+/* #header.scroll > div:last-child {
+  @apply py-3;
+} */
+
+#header.expanded nav {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  bottom: 70px !important;
+  padding: 0 5px;
+}
+
+/* header.scroll > div:last-child {
+  @apply py-3;
+} */
+
+header.expanded nav {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  bottom: 70px !important;
+  padding: 0 5px;
+}
+
+.dropdown:focus .dropdown-menu,
+.dropdown:focus-within .dropdown-menu,
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+[astro-icon].icon-light > * {
+  stroke-width: 1.2;
+}
+
+[astro-icon].icon-bold > * {
+  stroke-width: 2.4;
+}
+
+[data-aw-toggle-menu] path {
+  @apply transition;
+}
+[data-aw-toggle-menu].expanded g > path:first-child {
+  @apply -rotate-45 translate-y-[15px] translate-x-[-3px];
+}
+
+[data-aw-toggle-menu].expanded g > path:last-child {
+  @apply rotate-45 translate-y-[-8px] translate-x-[14px];
+}
+
+/* To deprecated */
+
+.dd *:first-child {
+  margin-top: 0;
+}

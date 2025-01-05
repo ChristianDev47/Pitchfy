@@ -1,0 +1,28 @@
+.wdt-shin {
+  -webkit-animation: moving-needle alternate 1.5s infinite;
+  animation: moving-needle alternate 1.5s infinite;
+}
+
+.wdt-glit {
+  -webkit-animation: glittering alternate .5s ease-in infinite;
+  animation: glittering alternate .5s ease-in infinite;
+}
+@keyframes glittering {
+0% {
+  opacity: 0.8;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+100% {
+  opacity: 1;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 1);
+}
+}
+
+@keyframes moving-needle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-25deg);
+  }
+}
