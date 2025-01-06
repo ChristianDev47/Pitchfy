@@ -6,7 +6,7 @@ import LoginPage from "../components/LoginPage";
 import LogPage from "../components/LogPage";
 import NotFoundPage from "../components/NotFoundPage";
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: '/',
     element: <Principal />,
@@ -32,5 +32,3 @@ const router = createBrowserRouter([
     element: <NotFoundPage />
   },
 ]);
-
-export default router;
