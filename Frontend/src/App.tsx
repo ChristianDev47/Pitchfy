@@ -1,5 +1,5 @@
 import './index.css';
-import {basic} from './utils/basic';
+import {basic} from './utils/basic.ts';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import Principal from './components/Principal';
 import { useEffect } from 'react';
