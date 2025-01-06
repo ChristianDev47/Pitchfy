@@ -5,7 +5,6 @@ const API = " https://pitchfy.onrender.com/payment";
 export async function CreatePaymentCard({ paymentCard }: { paymentCard: PaymentCard }) {
 
   try {
-    console.log(paymentCard);
     const response = await fetch(`${API}/create-checkout-session`, {
       method: "POST",
       headers: {
