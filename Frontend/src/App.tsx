@@ -7,6 +7,7 @@ import { AuthProvider } from './context/auth';
 import PaymentPage from './components/Plan';
 import LoginPage from './components/LoginPage';
 import { Toaster } from 'react-hot-toast';
+import LogPage from './components/LogPage.tsx';
 
 function App() {
   useEffect(() => {
@@ -18,7 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Principal />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/log" element={<LoginPage />} />
+          <Route path="/log" element={<LogPage />} />
           <Route path="/plan/starter" element={<PaymentPage />} />
         </Routes>
       </Router>
