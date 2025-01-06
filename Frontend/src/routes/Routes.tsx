@@ -6,7 +6,7 @@ import LoginPage from "../components/LoginPage";
 import LogPage from "../components/LogPage";
 import NotFoundPage from "../components/NotFoundPage";
 
-export const router = createBrowserRouter([
+export const Router = createBrowserRouter([
   {
     path: '/',
     element: <Principal />,
