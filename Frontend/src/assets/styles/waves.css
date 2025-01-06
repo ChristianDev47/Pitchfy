@@ -6,7 +6,7 @@
 .headerw {
   position: relative;
   text-align: center;
-  background: linear-gradient(90deg, #eff6ff  var(--gradient-percent), #dedede 100%);
+  background: linear-gradient(90deg, #ff6823  var(--gradient-percent), #ff3262 100%);
   color: white;
 }
 .logo {

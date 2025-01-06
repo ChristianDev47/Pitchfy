@@ -45,11 +45,11 @@
 }
 @media (min-width: 168px) {
   .reviews .top-reviews {
-    animation: ticker 180s linear infinite;
+    animation: ticker 280s linear infinite;
     align-self: flex-start;
  }
   .reviews .bottom-reviews {
-    animation: reversticker 180s linear infinite;
+    animation: reversticker 280s linear infinite;
     align-self: flex-end;
  }
 }

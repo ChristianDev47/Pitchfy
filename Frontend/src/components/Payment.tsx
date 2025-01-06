@@ -67,11 +67,11 @@ const Payment: React.FC<Props> = ({
                   <span className="text-base leading-6 text-gray-600 lowercase">{item.time}</span>
                 </div>
                 {item.points && (
-                  <ul className="my-8 space-y-2 text-left">
+                  <ul className="my-8 ml-2 space-y-2 text-left">
                     {item.points.map((point, idx) => (
                       <li key={idx} className="mb-1.5 flex items-start space-x-3 leading-7">
                         <div className="mt-1.5 rounded-full bg-primary">
-                          <Check size="10" color="secondary" />
+                          <Check size="13" color="secondary" />
                         </div>
                         <span className="text-[15px]">{point}</span>
                       </li>

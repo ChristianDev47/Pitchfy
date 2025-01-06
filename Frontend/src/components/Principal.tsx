@@ -12,7 +12,6 @@ import Footer from './Footer';
 import { footerData } from '../utils/navigation';
 import FloatingChat from './ui/Bot';
 
-
 const Principal = () => {
   return (
     <div className='w-full h-full font-sans'>

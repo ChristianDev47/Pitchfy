@@ -43,7 +43,7 @@ const MediaLogos: React.FC<MediaLogosProps> = ({
           <AP color='primary' size='212' />
         </div>
       </div>
-      <p className="text-center text-[12px] mt-[-1rem]">
+      <p className="text-center text-[12px] mt-[-1rem] mb-[2.8rem]">
         *Potential media coverage opportunities. Results may vary based on story quality and news relevance.
       </p>
     </WidgetWrapper>

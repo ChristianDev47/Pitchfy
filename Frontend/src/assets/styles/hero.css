@@ -3,19 +3,11 @@
   animation: moving-needle alternate 1.5s infinite;
 }
 
-.wdt-glit {
-  -webkit-animation: glittering alternate .5s ease-in infinite;
-  animation: glittering alternate .5s ease-in infinite;
-}
-@keyframes glittering {
-0% {
-  opacity: 0.8;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-}
-100% {
-  opacity: 1;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 1);
-}
+.text-shadow {
+  text-shadow:
+    1px 1px 1px rgba(0, 0, 0, 0.133),
+    0 0 0.1em rgba(0, 0, 0, 0.133),
+    0 0 0.2em rgba(0, 0, 0, 0.133);
 }
 
 @keyframes moving-needle {

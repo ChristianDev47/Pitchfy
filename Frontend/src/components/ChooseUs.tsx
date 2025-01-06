@@ -74,14 +74,14 @@ const Component: React.FC<Props> = ({
             <h1 className="mt-2 text-2xl font-semibold text-center">
               {item.title}
             </h1>
-            <ul className="mt-6 mb-10 space-y-3">
+            <ul className="mt-10 mb-10 space-y-3">
               {item.points?.map((point, pointIndex) => (
                 <div
                   key={pointIndex}
                   className="flex items-start space-x-2"
                 >
-                  <div className='mt-2 mr-1'>
-                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="18" height="18" x="0" y="0" viewBox="0 0 512 512">
+                  <div className='mt-1 mr-1'>
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="15" height="15" x="0" y="0" viewBox="0 0 512 512">
                       <g>
                         <path
                           d="M256 0C114.837 0 0 114.837 0 256s114.837 256 256 256 256-114.837 256-256S397.163 0 256 0zm79.083 271.083L228.416 377.749A21.275 21.275 0 0 1 213.333 384a21.277 21.277 0 0 1-15.083-6.251c-8.341-8.341-8.341-21.824 0-30.165L289.835 256l-91.584-91.584c-8.341-8.341-8.341-21.824 0-30.165s21.824-8.341 30.165 0l106.667 106.667c8.341 8.341 8.341 21.823 0 30.165z"
@@ -92,7 +92,7 @@ const Component: React.FC<Props> = ({
                       </g>
                     </svg>
                   </div>
-                  <li className="text-[15px]">{point}</li>
+                  <li className="text-[14px]">{point}</li>
                 </div>
               ))}
             </ul>
