@@ -5,12 +5,13 @@ const API = " https://pitchfy.onrender.com/payment";
 export async function CreatePaymentCard({ paymentCard }: { paymentCard: PaymentCard }) {
 
   try {
+    console.log(paymentCard);
     const response = await fetch(`${API}/create-checkout-session`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      credentials: "include", // Incluye las cookies en la solicitud
+      credentials: "include", 
       body: JSON.stringify(paymentCard),
     });
 
@@ -18,7 +19,7 @@ export async function CreatePaymentCard({ paymentCard }: { paymentCard: PaymentC
       const data = await response.json();
       return data;
     } else {
-      const errorData = await response.json(); // Intenta leer la respuesta en caso de error
+      const errorData = await response.json();
       throw new Error(errorData.message || "Failed to create payment card.");
     }
   } catch (error) {
