@@ -4,7 +4,7 @@ import { RouterProvider } from 'react-router-dom';
 import { useEffect } from 'react';
 import { AuthProvider } from './context/auth';
 import { Toaster } from 'react-hot-toast';
-import { Router } from './routes/routes';
+import { Router } from './routes/Routes';
 
 function App() {
   useEffect(() => {
