@@ -6,7 +6,7 @@
   color: white;
   position: fixed;
   bottom: 10px;
-  right: 125px;
+  right: 20px;
   width: 40px;
   height: 40px;
   transition: all 250ms ease-out;
@@ -16,6 +16,13 @@
   background-attachment: fixed;
   z-index: 100;
 }
+
+@media (min-width: 1286px) {
+  .floating-chat {
+    right: 125px; 
+  }
+}
+
 .floating-chat.enter {
   box-shadow: #232323;
   opacity: 1;

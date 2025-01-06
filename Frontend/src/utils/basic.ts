@@ -1,4 +1,5 @@
 export function basic() {
+  (window as Window & { basic_script?: boolean }).basic_script = true;
 
   function attachEvent(
     selector: string | NodeListOf<Element> | Element[],

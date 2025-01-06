@@ -27,10 +27,10 @@ const TestimonialsComponent: React.FC<Props> = ({
     <WidgetWrapper
     id={id}
     isDark={isDark}
-    containerClass={`max-w-screen flex justify-center items-center flex-col  ${classes?.container ?? ''}`}
+    containerClass={`max-w-screen flex justify-center items-center flex-col overflow-x-hidden ${classes?.container ?? ''}`}
     bg={bg}
   >
-    <div className="flex flex-col w-full max-w-[76rem] mb-8 lg:justify-between lg:flex-row">
+    <div className="flex flex-col w-full max-w-[76rem] mb-8 lg:justify-between lg:flex-row lg:px-0 md:px-[2rem] px-[2rem] ">
       {title && (
         <div className="md:max-w-lg">
           <h2
