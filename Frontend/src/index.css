@@ -38,7 +38,7 @@ html {
   }
 
   .btn-secondary {
-    @apply w-full font-semibold bg-primary text-white hover:bg-secondary hover:border-secondary hover:text-white  rounded-2xl;
+    @apply w-full font-semibold bg-primary text-white hover:bg-secondary hover:border-secondary hover:text-white  rounded-xl;
   }
 
   .btn-tertiary {

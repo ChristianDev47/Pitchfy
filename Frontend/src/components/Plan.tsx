@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import PaymentForm from './payment/PaymentForm';
 
 interface Item {
@@ -12,13 +13,10 @@ interface Item {
   points: string[];
 }
 
-const params = { plan: 'starter' };
-const { plan } = params;
-
 const items: Item[] = [
   {
-    id: 'price_1Qcxx5BXKBZiMZ3La5HCRslC',
-    plan: 'starter',
+    id: 'prod_RXRYFXTOxbaZpT',
+    plan: 'start',
     title: 'Starter Plan',
     value: '89.00',
     icon: 'tabler:check',
@@ -31,13 +29,40 @@ const items: Item[] = [
       'SEO-friendly formatting',
     ],
   },
+  {
+    id: 'prod_RXRatIyzUvSKuN',
+    plan: 'pro',
+    title: 'Pro Plan',
+    value: '199.00',
+    icon: 'tabler:check',
+    time: 'Month',
+    description: 'For businesses',
+    points: [
+      '5 AI-generated articles',
+      'Priority support',
+      'Advanced SEO strategies',
+      'Customized outreach plan',
+      'Email support',
+      'SEO-friendly formatting',
+    ],
+  }
 ];
 
-const item = items.find((item) => item.plan === plan);
-
 const PaymentPage: React.FC = () => {
+  const { plan } = useParams<{ plan: string }>(); 
+  const [selectedItem, setSelectedItem] = useState<Item | undefined>(undefined);
+
+  useEffect(() => {
+    const item = items.find((item) => item.plan === plan);
+    if (item) {
+      setSelectedItem(item);
+    } else {
+      setSelectedItem(items.find((item) => item.plan === 'start'));  
+    }
+  }, [plan]);  
+
   return (
-    <PaymentForm item={item} />
+    <PaymentForm item={selectedItem} />
   );
 };
 

@@ -173,6 +173,21 @@ const Principal = () => {
             description: 'From Basic use',
             points: ['1 AI-generated article', 'Basic journalist outreach', 'Email support', 'SEO-friendly formatting'],
           },
+          {
+            plan: 'pro',
+            title: 'Pro Plan',
+            value: '199.00',
+            time: 'Month',
+            description: 'For businesses',
+            points: [
+              '5 AI-generated articles',
+              'Priority support',
+              'Advanced SEO strategies',
+              'Customized outreach plan',
+              'Email support',
+              'SEO-friendly formatting',
+            ],
+          }
         ]}
       />
 

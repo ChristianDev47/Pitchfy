@@ -20,7 +20,7 @@ export const Router = createBrowserRouter([
     element: <LogPage />,
   },
   {
-    path: '/plan/starter',
+    path: '/plan/:plan',
     element: (
       <ProtectedRoute>
         <PaymentPage />
