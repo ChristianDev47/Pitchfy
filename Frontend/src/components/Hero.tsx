@@ -34,7 +34,7 @@ const Hero = () => {
                 </div>
                 <h3 className="text-[24px] font-semibold">1000+</h3>
               </div>
-              <p className="text-[17px]">Journalists always connected to share stories, news, and unique collaborations with you.</p>
+              <p className="text-[16px]">Journalists always connected to share stories, news, and unique collaborations with you.</p>
             </div>
             <div className="flex flex-col p-5 bg-gray-50 shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(135,43,151,0.15)] rounded-lg text-start max-w-[350px] space-y-2">
               <div className="flex items-center space-x-1">
@@ -43,7 +43,7 @@ const Hero = () => {
                 </div>
                 <h3 className="text-[24px] font-semibold">24/7</h3>
               </div>
-              <p className="text-[17px]">PR Agent for You, always here to manage your brand and connect with your audience.</p>
+              <p className="text-[16px]">PR Agent for You, always here to manage your brand and connect with your audience.</p>
             </div>
           </div>
         </div>

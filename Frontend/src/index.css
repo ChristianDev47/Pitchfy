@@ -6,10 +6,11 @@
 @font-face {
   font-family: "inter";
   src: url("/fonts/Inter.ttf") format("truetype");
+  font-display: swap;
 }
 
 html {
-  font-family: 'Inter', Courier, monospace;
+  font-family: 'Inter', 'Roboto', 'Segoe UI', 'Arial', 'sans-serif';
 }
 
 @layer utilities {

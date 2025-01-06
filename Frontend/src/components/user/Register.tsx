@@ -70,84 +70,98 @@ export default function FormRegister() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-    <div className="max-w-xs mx-auto text-start">
-      <input
-        {...register('displayName', {
-          required: 'Username is required',
-          onChange: handleInputUserName,
-        })}
-        className="w-full px-4 py-2 text-[15px] mt-[15px] mb-[2px] font-medium placeholder-gray-500 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-400 focus:bg-white"
-        type="username"
-        placeholder="Username"
-      />
-      {errors.displayName && (
-        <p className="text-[14px] ml-2 text-[#ff2d2d]">{errors.displayName.message}</p>
-      )}
-      <input
-        {...register('firstName', {
-          required: 'First name is required',
-          onChange: handleInputFirstName,
-        })}
-        className="w-full px-4 py-2 text-[15px] mt-[15px] mb-[2px] font-medium placeholder-gray-500 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-400 focus:bg-white"
-        type="firstname"
-        placeholder="First name"
-      />
-      {errors.firstName && (
-        <p className="text-[14px] ml-2 text-[#ff2d2d]">{errors.firstName.message}</p>
-      )}
-      <input
-        {...register('lastName', {
-          required: 'Last name is required',
-          onChange: handleInputLastName,
-        })}
-        className="w-full px-4 py-2 text-[15px] mt-[15px] mb-[2px] font-medium placeholder-gray-500 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-400 focus:bg-white"
-        type="lastname"
-        placeholder="Last name"
-      />
-      {errors.lastName && (
-        <p className="text-[14px] ml-2 text-[#ff2d2d]">{errors.lastName.message}</p>
-      )}
-
-      <input
-        {...register('email', {
-          required: 'Email is required',
-          pattern: {
-            value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-            message: 'Invalid email format. Please enter a valid email address',
-          },
-          onChange: handleInputEmail,
-        })}
-        className="w-full px-4 py-2 text-[15px] mt-[15px] mb-[2px] font-medium placeholder-gray-500 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-400 focus:bg-white"
-        type="email"
-        placeholder="Email"
-      />
-      {errors.email && (
-        <p className="text-[14px] ml-2 text-[#ff2d2d]">{errors.email.message}</p>
-      )}
-
-      <input
-        {...register('password', {
-          required: 'Password is required',
-          minLength: {
-            value: 6,
-            message: 'Password must be at least 6 characters long',
-          },
-          onChange: handleInputPassword,
-        })}
-        className="w-full px-4 py-2 mt-[15px] mb-[2px] text-sm font-medium placeholder-gray-500 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-400 focus:bg-white"
-        type="password"
-        placeholder="Password"
-      />
-      {errors.password && (
-        <p className="text-[14px] ml-2 text-[#ff2d2d]">{errors.password.message}</p>
-      )}
+    <form onSubmit={handleSubmit(onSubmit)} className='max-w-[38rem] w-full text-start'>  
+      <h3 className="text-[22px] font-semibold mb-4 text-start">Register</h3>
+      <div className="flex flex-col w-full text-start">
+        <div className="flex items-center justify-start space-x-1">
+          <label className="block mb-1 text-[14px]"><i className="fa fa-user"></i>Username</label>
+          {errors.displayName?.message && <p className="text-[12px] text-red-500 mb-[.2rem]"> ({errors.displayName.message})</p>}
+        </div>
+        <input
+          {...register('displayName', {
+            required: 'Username is required',
+            onChange: handleInputUserName,
+          })}
+          placeholder='RobertWill'
+          autoComplete='displayName'
+          className="w-full py-1 px-2 border border-gray-300 rounded-md mb-2 text-[14px]"
+          type="username"
+        />
+        <div className="flex space-x-2">
+          <div className="w-full md:w-1/2">
+          <div className="flex items-center justify-start space-x-1">
+          <label className="block mb-1 text-[14px]"><i className="fa fa-envelope"></i>First name</label>
+          {errors.firstName?.message && <p className="text-[12px] text-red-500 mb-[.2rem]"> ({errors.firstName.message})</p>}
+        </div>
+        <input
+          {...register('firstName', {
+            required: 'First name is required',
+            onChange: handleInputFirstName,
+          })}
+          autoComplete='firstName'
+          className="w-full py-1 px-2 border border-gray-300 rounded-md mb-2 text-[14px]"
+          type="firstname"
+          placeholder="Robert"
+        />
+          </div>
+          <div className="w-full md:w-1/2">
+          <div className="flex items-center justify-start space-x-1">
+          <label className="block mb-1 text-[14px]"><i className="fa fa-envelope"></i>Last name</label>
+          {errors.lastName?.message && <p className="text-[12px] text-red-500 mb-[.2rem]"> ({errors.lastName.message})</p>}
+        </div>
+        <input
+          {...register('lastName', {
+            required: 'Last name is required',
+            onChange: handleInputLastName,
+          })}
+          autoComplete='lastName'
+          className="w-full py-1 px-2 border border-gray-300 rounded-md mb-2 text-[14px]"
+          type="lastname"
+          placeholder="Williams"
+        />
+          </div>
+        </div>
+        <div className="flex items-center justify-start space-x-1">
+          <label className="block mb-1 text-[14px]"><i className="fa fa-envelope"></i>Email</label>
+          {errors.email?.message && <p className="text-[12px] text-red-500 mb-[.2rem]"> ({errors.email.message})</p>}
+        </div>
+        <input
+          {...register('email', {
+            required: 'Email is required',
+            pattern: {
+              value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+              message: 'Invalid email format. Please enter a valid email address',
+            },
+            onChange: handleInputEmail,
+          })}
+          autoComplete='email'
+          className="w-full py-1 px-2 border border-gray-300 rounded-md mb-2 text-[14px]"
+          type="email"
+          placeholder="robertwilliam21@gmai.com"
+        />
+        <div className="flex items-center justify-start space-x-1">
+          <label className="block mb-1 text-[14px]"><i className="fa fa-envelope"></i>Password</label>
+          {errors.password?.message && <p className="text-[12px] text-red-500 mb-[.2rem]"> ({errors.password.message})</p>}
+        </div>
+        <input
+          {...register('password', {
+            required: 'Password is required',
+            minLength: {
+              value: 6,
+              message: 'Password must be at least 6 characters long',
+            },
+            onChange: handleInputPassword,
+          })}
+          autoComplete='current-password'
+          className="w-full py-1 px-2 border border-gray-300 rounded-md mb-2 text-[14px]"
+          type="password"
+        />
 
       <button
         disabled={inputEmailValue === '' || inputPasswordValue === '' || inputUserNameValue === '' || inputFirstNameValue === '' || inputLastNameValue === ''}
-        className="w-full py-2 rounded-md mt-[15px] mb-[2px] btn-primary"
+        className=" py-2 rounded-md mt-[15px] mb-[6px] btn-primary px-10"
       >
-        <span className="text-[15px]">Register</span>
+        <span className="text-[14px]">Continue</span>
       </button>
 
     </div>

@@ -15,7 +15,7 @@ import FloatingChat from './ui/Bot';
 
 const Principal = () => {
   return (
-    <div className='w-full h-full'>
+    <div className='w-full h-full font-sans'>
       <Header isSticky showRssFeed showToggleTheme/>
       <FloatingChat/>
       {/* Hero */}

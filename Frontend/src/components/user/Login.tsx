@@ -61,11 +61,11 @@ export default function FormLogin() {
         <div className="signin-signup">
          <div className={`sign-in-form ${sifMode} flex justify-center items-center h-screen`}> 
           <div className="flex flex-col items-center justify-center flex-1 w-full mt-6 text-center wdt-heading-title-wrapper wdt-heading-align-center wdt-heading-deco-wrapper motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
-            <h1 className='mb-5 text-[1.5rem] font-semibold text-gray-800'>Hello Again 👋</h1>
+            <h1 className='mb-5 text-[22px] font-semibold text-gray-800'>Hello Again 👋</h1>
             <div className="flex flex-col items-center w-full ">
               <button
                 onClick={googleAuth}
-                className="flex items-center justify-center w-full max-w-xs py-2 text-sm font-bold text-gray-800 transition-all duration-300 ease-in-out bg-indigo-100 rounded-lg shadow-sm focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline"
+                className="flex items-center justify-center w-full max-w-[25rem] py-2 text-sm font-bold text-gray-800 transition-all duration-300 ease-in-out bg-indigo-100 rounded-lg shadow-sm focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline"
               >
                 <div className="p-2 bg-white rounded-full">
                   <svg className="w-4" viewBox="0 0 533.5 544.3">
@@ -87,65 +87,65 @@ export default function FormLogin() {
                     />
                   </svg>
                 </div>
-                <span className="ml-2 text-[15px]">Login with Google</span>
+                <span className="ml-2 text-[14px]">Login with Google</span>
               </button>
             </div>
 
             <div className="my-5 text-center border-b w-[280px]">
-              <div className="inline-block px-2 text-[15px] font-medium leading-none tracking-wide text-gray-600 transform translate-y-1/2 bg-white">
+              <div className="inline-block px-2 text-[13px] font-medium leading-none tracking-wide text-gray-600 transform translate-y-1/2 bg-white">
                 Or login with e-mail
               </div>
             </div>
 
             <form className="flex flex-col items-center w-full " onSubmit={handleSubmit(onSubmit)}>
-              <div  className="flex flex-col justify-center w-full max-w-xs text-start">
+              <div  className="flex flex-col justify-center w-full max-w-[25rem] text-start">
                 <input
                   {...register('email', {
-                    required: 'El correo electrónico es obligatorio',
+                    required: 'Email is required',
                     pattern: {
                       value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                      message: 'El correo electrónico no es válido',
+                      message: 'Invalid email format. Please enter a valid email address',
                     },
                     onChange: handleInputEmail,
                   })}
-                  className="w-full px-4 py-2 text-[15px] font-medium placeholder-gray-500 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-400 focus:bg-white"
+                  autoComplete='email'
+                  className="w-full py-1 px-2 border border-gray-300 rounded-md mb-3 text-[14px]"
                   type="email"
                   placeholder="Email"
                 />
-                {errors.email && (
-                  <p className="text-[14px] ml-2 text-start text-[#ff2d2d]">{errors.email.message}</p>
-                )}
+                <div className="flex items-center justify-start space-x-1">
+                  {errors.email?.message && <p className="text-[12px] text-red-500 mb-[.2rem]"> ({errors.email.message})</p>}
+                </div>
 
                 <input
                   {...register('password', {
-                    required: 'La contraseña es obligatoria',
+                    required: 'Password is required',
                     minLength: {
                       value: 6,
-                      message: 'La contraseña debe tener al menos 6 caracteres',
+                      message: 'Password must be at least 6 characters long',
                     },
                     onChange: handleInputPassword,
                   })}
-                  className="w-full px-4 py-2 text-[15px] mt-3 placeholder-gray-500 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-400 focus:bg-white"
+                  autoComplete='current-password'
+                  className="w-full py-1 px-2 border border-gray-300 rounded-md mb-3 text-[14px]"
                   type="password"
                   placeholder="Password"
                 />
-                {errors.password && (
-                  <p className="text-[14px] ml-2 text-start text-[#ff2d2d]">{errors.password.message}</p>
-                )}
-
+                <div className="flex items-center justify-start space-x-1">
+                  {errors.password?.message && <p className="text-[12px] text-red-500 mb-[.2rem]"> ({errors.password.message})</p>}
+                </div>
                 <button
                   disabled={inputEmailValue === '' || inputPasswordValue === ''}
-                  className="w-full py-2 mt-3 rounded-md btn-primary"
+                  className="w-full py-2 my-3 rounded-md btn-primary"
                 >
-                  <span className="text-[15px]">Login </span>
+                  <span className="text-[15px]">Login</span>
                 </button>
 
               </div>
             </form>
           </div>
          </div>
-          <div  className={`sign-up-form ${sufMode} text-center`}>
-            <h1 className='mb-5 text-[1.5rem] font-semibold text-gray-800'>Register</h1>
+          <div className={`sign-up-form ${sufMode} flex justify-center`}>
             <FormRegister/>
           </div>
         </div>
