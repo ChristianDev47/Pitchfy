@@ -15,8 +15,8 @@ interface Item {
 
 const items: Item[] = [
   {
-    id: 'price_1QeMfS2NCPYtyD2gYWji90v5',
-    plan: 'start',
+    id: 'price_1QeSBtRtW2ZrLYIATGm8xSSD',
+    plan: 'starter',
     title: 'Starter Plan',
     value: '89.00',
     icon: 'tabler:check',
@@ -30,7 +30,7 @@ const items: Item[] = [
     ],
   },
   {
-    id: 'price_1QeMhP2NCPYtyD2gbZV5OJtc',
+    id: 'price_1QeSDZRtW2ZrLYIAVEMiGp9O',
     plan: 'pro',
     title: 'Pro Plan',
     value: '199.00',

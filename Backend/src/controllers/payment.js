@@ -7,9 +7,7 @@ export const createPaymentSession = async (req, res) => {
   const { planId, userId } = req.body;
 
   try {
-  console.log(planId, userId);
     const session = await createCheckoutSession(planId, userId);
-  console.log(session);
     res.json({ url: session.url, sessionId: session.id});
   } catch (error) {
     res.status(500).json({ error: error.message });
