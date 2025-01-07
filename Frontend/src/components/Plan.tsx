@@ -38,11 +38,11 @@ const items: Item[] = [
     time: 'Month',
     description: 'For businesses',
     points: [
-      '5 AI-generated articles',
+      '1 AI-generated article',
+      'Guaranteed publication of article',
       'Priority support',
       'Advanced SEO strategies',
       'Customized outreach plan',
-      'Email support',
       'SEO-friendly formatting',
     ],
   }
