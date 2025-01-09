@@ -167,7 +167,7 @@ const Principal = () => {
           {
             plan: 'starter',
             title: 'Starter Plan',
-            value: '89.00',
+            value: '89',
             time: 'Month',
             description: 'From Basic use',
             points: ['1 AI-generated article', 'Basic journalist outreach', 'Email support', 'SEO-friendly formatting'],
@@ -175,7 +175,7 @@ const Principal = () => {
           {
             plan: 'pro',
             title: 'Pro Plan',
-            value: '199.00',
+            value: '199',
             time: 'Month',
             description: 'For businesses',
             points: [
@@ -186,7 +186,24 @@ const Principal = () => {
               'Customized outreach plan',
               'SEO-friendly formatting',
             ],
-          }
+          },
+          {
+            plan: 'premium',
+            title: 'Premium Plan',
+            value: '400',
+            time: 'Month',
+            description: 'For advanced businesses',
+            points: [
+              '1 AI-generated article',
+              'Guaranteed publication of article',
+              'Post on Business Insider',
+              'Post on Yahoo Finance',
+              'Priority support',
+              'Advanced SEO strategies',
+              'Customized outreach plan',
+              'SEO-friendly formatting',
+            ],
+          },
         ]}
       />
 

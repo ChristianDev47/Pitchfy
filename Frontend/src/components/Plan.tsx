@@ -45,7 +45,26 @@ const items: Item[] = [
       'Customized outreach plan',
       'SEO-friendly formatting',
     ],
-  }
+  },
+  {
+    id: 'price_1QfT0BRtW2ZrLYIA8Jhe9cG5',
+    plan: 'premium',
+    title: 'Premium Plan',
+    value: '400.00',
+    icon: 'tabler:check',
+    time: 'Month',
+    description: 'For advanced businesses with premium reach',
+    points: [
+      '1 AI-generated article',
+      'Guaranteed publication of article',
+      'Post on Business Insider',
+      'Post on Yahoo Finance',
+      'Priority support',
+      'Advanced SEO strategies',
+      'Customized outreach plan',
+      'SEO-friendly formatting',
+    ],
+  },
 ];
 
 const PaymentPage: React.FC = () => {

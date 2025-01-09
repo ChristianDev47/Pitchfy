@@ -9,7 +9,10 @@ function ButtonPay({item}: Props) {
   
   return (
     <a
-      className="ml-2 py-1.5 px-12 transition-all font-semibold shadow-none text-sm btn-secondary"
+      className={`ml-2 py-1.5 px-12 transition-all font-semibold shadow-none text-sm btn-secondary 
+      ${item === 'starter' ? 'hover:bg-[#FF7130]' : ''}
+      ${item === 'pro' ? 'hover:bg-[#FF3C68]' : ''}
+      ${item === 'premium' ? 'hover:bg-[#872B97]' : ''}`}
       href={user && user.plan ? 'https://pitchfy.zapier.app' : user._id !== '' ? `/plan/${item}` : '/login'}
     >
       {user && user.plan ? 

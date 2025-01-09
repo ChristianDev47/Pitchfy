@@ -46,12 +46,16 @@ const Payment: React.FC<Props> = ({
           items.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col justify-between w-full max-w-sm px-5 py-8 text-center bg-white border border-gray-200 rounded-lg shadow backdrop-blur"
-              style={{ minHeight: "525px" }} 
+              className={`flex flex-col justify-between w-full max-w-sm px-5 rounded-lg shadow-md py-8 text-center bg-white border border-gray-300 shadow-[#b9b9b9] backdrop-blur transform transition duration-300 hover:scale-105
+                ${item.plan === 'starter' ? 'hover:border-[#FF7130] hover:shadow-[#FF7130]' : ''}
+                ${item.plan === 'pro' ? 'hover:border-[#FF3C68] hover:shadow-[#FF3C68]' : ''}
+                ${item.plan === 'premium' ? 'hover:border-[#872B97] hover:shadow-[#872B97]' : ''}`}
             >
               <div className="absolute right-[-5px] 2xl:right-[-8px] rtl:right-auto rtl:left-[-8px] rtl:2xl:left-[-10px] top-[-5px] 2xl:top-[-10px] z-[1] h-[100px] w-[100px] overflow-hidden text-right">
                 <span className="absolute top-[19px] right-[-21px] rtl:right-auto rtl:left-[-21px] block w-full rotate-45 rtl:-rotate-45 bg-green-700 text-center text-[10px] font-bold uppercase leading-5 text-white shadow-[0_3px_10px_-5px_rgba(0,0,0,0.3)] before:absolute before:left-0 before:top-full before:z-[-1] before:border-[3px] before:border-r-transparent before:border-b-transparent before:border-l-green-800 before:border-t-green-800 before:content-[''] after:absolute after:right-0 after:top-full after:z-[-1] after:border-[3px] after:border-l-transparent after:border-b-transparent after:border-r-green-800 after:border-t-green-800 after:content-['']">
-                  New
+                {item.plan === 'premium' && (
+                  <span>New</span>
+                )}
                 </span>
               </div>
               <div className="flex flex-col flex-grow px-2 py-0">
@@ -61,8 +65,8 @@ const Payment: React.FC<Props> = ({
                 {subtitle && <p className="font-light text-gray-600 text-[18px]">{item.description}</p>}
                 <div className="my-2">
                   <div className="flex items-center justify-center mb-1 text-center">
-                    <span className="text-[1.5rem]">$</span>
-                    <span className="text-[2.5rem] font-extrabold">{item.value}</span>
+                    <span className="text-[1.8rem] mr-1">$</span>
+                    <span className="text-[2.8rem] font-extrabold">{item.value}</span>
                   </div>
                   <span className="text-base leading-6 text-gray-600 lowercase">{item.time}</span>
                 </div>
