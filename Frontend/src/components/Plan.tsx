@@ -64,7 +64,7 @@ const items: Item[] = [
       'Customized outreach plan',
       'SEO-friendly formatting',
     ],
-  },
+  }
 ];
 
 const PaymentPage: React.FC = () => {
