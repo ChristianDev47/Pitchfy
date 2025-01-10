@@ -38,7 +38,7 @@ const Header: React.FC<Props> = ({
     <header
       className={[
         isSticky ? 'sticky' : 'relative',
-        'top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out bg-white',
+        'top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out ',
       ].join(' ')}
       {...(isSticky ? { 'data-aw-sticky-header': true } : {})}
       id={id}

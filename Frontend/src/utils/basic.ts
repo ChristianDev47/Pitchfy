@@ -2,7 +2,7 @@ export function basic() {
   (window as Window & { basic_script?: boolean }).basic_script = true;
 
   function attachEvent(
-    selector: string | NodeListOf<Element> | Element[],
+    selector: string | NodeListOf<Element> | Element[] ,
     event: string,
     fn: (e: Event, elem: Element) => void
   ): void {
@@ -22,7 +22,7 @@ export function basic() {
 
   const onLoad = (): void => {
     let lastKnownScrollPosition = window.scrollY;
-    let ticking = true;
+    let ticking = false;  // Cambié a false para evitar que el evento se dispare demasiado rápido.
 
     attachEvent('#header nav', 'click', () => {
       const header = document.getElementById('header');
@@ -44,41 +44,6 @@ export function basic() {
       document.querySelector('#header > div > div:last-child')?.classList.toggle('hidden');
     });
 
-    attachEvent('[data-aw-social-share]', 'click', (_, elem) => {
-      const network = elem.getAttribute('data-aw-social-share');
-      const url = encodeURIComponent(elem.getAttribute('data-aw-url') || '');
-      const text = encodeURIComponent(elem.getAttribute('data-aw-text') || '');
-
-      let href: string | undefined;
-
-      switch (network) {
-        case 'facebook':
-          href = `https://www.facebook.com/sharer.php?u=${url}`;
-          break;
-        case 'twitter':
-          href = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
-          break;
-        case 'linkedin':
-          href = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${text}`;
-          break;
-        case 'whatsapp':
-          href = `https://wa.me/?text=${text}%20${url}`;
-          break;
-        case 'mail':
-          href = `mailto:?subject=%22${text}%22&body=${text}%20${url}`;
-          break;
-        default:
-          return;
-      }
-
-      if (href) {
-        const newlink = document.createElement('a');
-        newlink.target = '_blank';
-        newlink.href = href;
-        newlink.click();
-      }
-    });
-
     const screenSize = window.matchMedia('(max-width: 767px)');
     screenSize.addEventListener('change', () => {
       const header = document.getElementById('header');
@@ -90,26 +55,30 @@ export function basic() {
     });
 
     const applyHeaderStylesOnScroll = (): void => {
-      const header = document.querySelector('header');
+      const header = document.getElementById('header');
       if (!header) return;
+
+      // Si el desplazamiento es mayor a 60px, añade la clase scroll
       if (lastKnownScrollPosition > 60 && !header.classList.contains('scroll')) {
         header.classList.add('scroll');
       } else if (lastKnownScrollPosition <= 60 && header.classList.contains('scroll')) {
         header.classList.remove('scroll');
       }
-      ticking = false;
+      ticking = false;  // Reestablecer ticking
     };
 
+    // Aplica el estilo en el primer load
     applyHeaderStylesOnScroll();
 
-    attachEvent('document', 'scroll', () => {
+    // Evento de scroll de la ventana
+    window.addEventListener('scroll', () => {
       lastKnownScrollPosition = window.scrollY;
 
       if (!ticking) {
         window.requestAnimationFrame(() => {
           applyHeaderStylesOnScroll();
         });
-        ticking = true;
+        ticking = true;  // Marcar como que está "en proceso" para optimizar
       }
     });
   };
