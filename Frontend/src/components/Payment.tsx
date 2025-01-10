@@ -46,7 +46,7 @@ const Payment: React.FC<Props> = ({
           items.map((item, index) => (
             <div
               key={index}
-              className={`flex flex-col justify-between w-full max-w-sm px-5 rounded-lg shadow-md py-8 text-center bg-white border border-gray-300 shadow-[#b9b9b9] backdrop-blur transform transition duration-300 hover:scale-105
+              className={`flex flex-col justify-between w-full max-w-sm px-5 rounded-lg shadow-md py-8 text-center bg-white border border-gray-200 shadow-[#5353533b] backdrop-blur transform transition duration-300 hover:scale-105
                 ${item.plan === 'starter' ? 'hover:border-[#FF7130] hover:shadow-[#FF7130]' : ''}
                 ${item.plan === 'pro' ? 'hover:border-[#FF3C68] hover:shadow-[#FF3C68]' : ''}
                 ${item.plan === 'premium' ? 'hover:border-[#872B97] hover:shadow-[#872B97]' : ''}`}
