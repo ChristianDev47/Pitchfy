@@ -101,7 +101,7 @@ const Footer: FC<Props> = ({
               ))}
             </ul>
           )}
-          <div className="mr-4 text-sm">Made by <a className="text-blue-600 underline" href="https://linktr.ee/Christian_Delgado">Christian Delgado</a> · All rights reserved.</div>
+          <div className="mr-4 text-sm">Made by <a className="text-blue-600 underline" href="https://www.linkedin.com/in/christian-delgado-sanchez/">Christian Delgado</a> · All rights reserved.</div>
         </div>
       </div>
     </footer>
